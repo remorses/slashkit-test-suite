@@ -1,11 +1,23 @@
 {
     "name": "slashkit-test-suite",
-    "version": "1.0.0",
+    "version": "0.0.0",
     "description": "",
     "scripts": {
-        "test": ""
+        "test": "vitest --run",
+        "push-routes": "pnpm esno scripts/push-routes.ts",
+        "start-local-server": "pnpm -r --filter router play-fullstack",
+        "test:locally": "concurrently -k 'pnpm start-local-server' 'LOCALLY=true rm -rf diskv && pnpm -r --filter router build && doppler run -- vitest --run'"
     },
     "keywords": [],
     "author": "remorses <beats.by.morse@gmail.com>",
-    "license": "ISC"
+    "license": "ISC",
+    "dependencies": {
+        "concurrently": "^7.3.0",
+        "esbuild": "^0.14.49",
+        "esno": "0.14.1",
+        "json5": "^2.2.1",
+        "undici": "^5.2.0",
+        "vite": "^3.0.2",
+        "vitest": "^0.18.1"
+    }
 }

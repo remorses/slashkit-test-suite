@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main] # TODO make sure i don't expose secret to pull requests
+
+jobs:
+  ci:
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    env:
+      SECRET: ${{ secrets.SECRET }}
+    steps:
+      - uses: actions/checkout@master
+        with:
+          # fetch-depth: 0
+          submodules: recursive
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+      # - uses: dopplerhq/cli-action@v1
+
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
+        with:
+          path: ~/pnpm
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+      # setup pnpm
+      - uses: pnpm/action-setup@v2.2.1
+        with:
+          version: 7
+          run_install: false
+      # scripts
+      - run: pnpm i --store-dir ~/pnpm
+      # TODO push routes changes with secrets from CI
+      - run: pnpm run push-routes
+      - run: pnpm run test
