@@ -1,9 +1,12 @@
 import fs from 'fs'
+import path from 'path'
 import JSON5 from 'json5'
 
 export const LOCALLY = !!process.env.LOCALLY
 export function getRoutes(): Route[] {
-    let routes: Route[] = JSON5.parse(fs.readFileSync('./routes.jsonc', 'utf8'))
+    let routes: Route[] = JSON5.parse(
+        fs.readFileSync(path.resolve(__dirname, './routes.jsonc'), 'utf8'),
+    )
     routes = routes.map((r) => {
         if (!r.path.startsWith('/slashkit-test-')) {
             throw new Error(
