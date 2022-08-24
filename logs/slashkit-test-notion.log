@@ -1,0 +1,15 @@
+https://http-inputs-notion.splunkcloud.com/services/collector/raw:0:0 Failed to load resource: net::ERR_FAILED
+http://127.0.0.1:5066/slashkit-test-notion/895-3747de6fbf84346dc505.js:9:14925 Failed to connect to splunk server TypeError: Failed to fetch
+    at fetch2 (http://127.0.0.1:5066/slashkit-test-notion:556:12)
+    at http://127.0.0.1:5066/slashkit-test-notion/895-3747de6fbf84346dc505.js:10:17197
+    at d2.push (http://127.0.0.1:5066/slashkit-test-notion/app-ea74fac2bace5a2af4c1.js:1:5970445)
+    at http://127.0.0.1:5066/slashkit-test-notion/app-ea74fac2bace5a2af4c1.js:1:5969713
+    at Array.forEach (<anonymous>)
+    at l2.push (http://127.0.0.1:5066/slashkit-test-notion/app-ea74fac2bace5a2af4c1.js:1:5969698)
+    at w (http://127.0.0.1:5066/slashkit-test-notion/app-ea74fac2bace5a2af4c1.js:1:5972362)
+    at Module.S (http://127.0.0.1:5066/slashkit-test-notion/app-ea74fac2bace5a2af4c1.js:1:5971693)
+    at n3 (http://127.0.0.1:5066/slashkit-test-notion/app-ea74fac2bace5a2af4c1.js:1:4913668)
+    at async se (http://127.0.0.1:5066/slashkit-test-notion/app-ea74fac2bace5a2af4c1.js:1:4913364)
+    at async i2 (http://127.0.0.1:5066/slashkit-test-notion/app-ea74fac2bace5a2af4c1.js:1:4702292)
+    at async http://127.0.0.1:5066/slashkit-test-notion/app-ea74fac2bace5a2af4c1.js:1:4709263
+

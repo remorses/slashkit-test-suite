@@ -6,7 +6,7 @@
         "test": "vitest --run",
         "push-routes": "pnpm esno scripts/push-routes.ts",
         "start-local-server": "pnpm -r --filter router play-fullstack",
-        "test:locally": "concurrently -k 'pnpm start-local-server' 'LOCALLY=true rm -rf diskv && pnpm -r --filter router build && doppler run -- vitest --run'"
+        "test:locally": "LOCALLY=true doppler run -- pnpm push-routes && concurrently -k 'pnpm start-local-server' 'rm -rf diskv && pnpm -r --filter router build && LOCALLY=true doppler run -- vitest --run'"
     },
     "keywords": [],
     "author": "remorses <beats.by.morse@gmail.com>",

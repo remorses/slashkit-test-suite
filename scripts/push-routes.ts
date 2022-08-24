@@ -1,27 +1,40 @@
 import { fetch } from 'undici'
 import { getRoutes } from '../utils'
 
-const isDev = true // how to decide when doing dev and prod?
+const isPreview = true // how to decide when doing dev and prod?
+
+let base = (() => {
+    if (process.env.LOCALLY) {
+        return `http://localhost:7050`
+    }
+    if (isPreview) {
+        return `https://suite.preview.slashkit.app`
+    }
+    if (process.env.NODE_ENV === 'production') {
+        return `https://suite.slashkit.app`
+    }
+
+    throw new Error('Unknown NODE_ENV')
+})()
 
 async function main() {
     const secret = process.env.TEST_SUITE_SECRET || ''
     if (!secret) {
-        throw new Error('SECRET is required')
+        throw new Error('TEST_SUITE_SECRET is required')
     }
     console.log('Pushing routes to server')
-    const resp = await fetch(
-        `https://${isDev ? 'preview.' : ''}slashkit.io/api/push-suite-routes`,
-        {
-            body: JSON.stringify({
-                routes: getRoutes(),
-            }),
-            headers: {
-                secret,
-                'content-type': 'application/json',
-                accept: 'application/json',
-            },
+    console.log(`Base: ${base}`)
+    const resp = await fetch(`${base}/api/push-suite-routes`, {
+        body: JSON.stringify({
+            routes: getRoutes(),
+        }),
+        method: 'POST',
+        headers: {
+            secret,
+            'content-type': 'application/json',
+            accept: 'application/json',
         },
-    )
+    })
     if (!resp.ok) {
         throw new Error(`${resp.status} ${resp.statusText}`)
     }

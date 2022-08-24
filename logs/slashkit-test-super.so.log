@@ -1,0 +1,45 @@
+https://http-inputs-notion.splunkcloud.com/services/collector/raw:0:0 Failed to load resource: net::ERR_FAILED
+http://127.0.0.1:5066/slashkit-test-notion/895-3747de6fbf84346dc505.js:9:14925 Failed to connect to splunk server TypeError: Failed to fetch
+    at fetch2 (http://127.0.0.1:5066/slashkit-test-notion:556:12)
+    at http://127.0.0.1:5066/slashkit-test-notion/895-3747de6fbf84346dc505.js:10:17197
+    at d2.push (http://127.0.0.1:5066/slashkit-test-notion/app-ea74fac2bace5a2af4c1.js:1:5970445)
+    at http://127.0.0.1:5066/slashkit-test-notion/app-ea74fac2bace5a2af4c1.js:1:5969713
+    at Array.forEach (<anonymous>)
+    at l2.push (http://127.0.0.1:5066/slashkit-test-notion/app-ea74fac2bace5a2af4c1.js:1:5969698)
+    at w (http://127.0.0.1:5066/slashkit-test-notion/app-ea74fac2bace5a2af4c1.js:1:5972362)
+    at Module.S (http://127.0.0.1:5066/slashkit-test-notion/app-ea74fac2bace5a2af4c1.js:1:5971693)
+    at N (http://127.0.0.1:5066/slashkit-test-notion/app-ea74fac2bace5a2af4c1.js:1:4285812)
+https://http-inputs-notion.splunkcloud.com/services/collector/raw:0:0 Failed to load resource: net::ERR_FAILED
+http://127.0.0.1:5066/slashkit-test-notion/895-3747de6fbf84346dc505.js:9:14925 Failed to connect to splunk server TypeError: Failed to fetch
+    at fetch2 (http://127.0.0.1:5066/slashkit-test-notion:556:12)
+    at http://127.0.0.1:5066/slashkit-test-notion/895-3747de6fbf84346dc505.js:10:17197
+    at d2.push (http://127.0.0.1:5066/slashkit-test-notion/app-ea74fac2bace5a2af4c1.js:1:5970445)
+    at http://127.0.0.1:5066/slashkit-test-notion/app-ea74fac2bace5a2af4c1.js:1:5969713
+    at Array.forEach (<anonymous>)
+    at l2.push (http://127.0.0.1:5066/slashkit-test-notion/app-ea74fac2bace5a2af4c1.js:1:5969698)
+    at w (http://127.0.0.1:5066/slashkit-test-notion/app-ea74fac2bace5a2af4c1.js:1:5972362)
+    at Module.S (http://127.0.0.1:5066/slashkit-test-notion/app-ea74fac2bace5a2af4c1.js:1:5971693)
+    at m2 (http://127.0.0.1:5066/slashkit-test-notion/895-3747de6fbf84346dc505.js:13:444028)
+    at _2 (http://127.0.0.1:5066/slashkit-test-notion/895-3747de6fbf84346dc505.js:13:444086)
+    at Module.b2 (http://127.0.0.1:5066/slashkit-test-notion/895-3747de6fbf84346dc505.js:13:444437)
+    at http://127.0.0.1:5066/slashkit-test-notion/app-ea74fac2bace5a2af4c1.js:1:4435867
+    at http://127.0.0.1:5066/slashkit-test-notion/app-ea74fac2bace5a2af4c1.js:1:5025545
+    at Set.forEach (<anonymous>)
+    at f.emit (http://127.0.0.1:5066/slashkit-test-notion/app-ea74fac2bace5a2af4c1.js:1:5025532)
+    at f.emit (http://127.0.0.1:5066/slashkit-test-notion/app-ea74fac2bace5a2af4c1.js:1:44040)
+    at f.recomputeState (http://127.0.0.1:5066/slashkit-test-notion/app-ea74fac2bace5a2af4c1.js:1:43203)
+    at f.addListener (http://127.0.0.1:5066/slashkit-test-notion/app-ea74fac2bace5a2af4c1.js:1:43864)
+    at Module.le (http://127.0.0.1:5066/slashkit-test-notion/app-ea74fac2bace5a2af4c1.js:1:4435847)
+    at i2 (http://127.0.0.1:5066/slashkit-test-notion/app-ea74fac2bace5a2af4c1.js:1:4704842)
+    at async http://127.0.0.1:5066/slashkit-test-notion/app-ea74fac2bace5a2af4c1.js:1:4709263
+http://127.0.0.1:5066/slashkit-test-super.so/__slashkit_scripts/aHR0cHM6Ly9hLnN1cGVyLnNvL3NjcmlwdC5qcw==:0:0 Failed to load resource: the server responded with a status of 403 (Forbidden)
+http://127.0.0.1:5066/_next/image?url=https%3A%2F%2Fsuper-static-assets.s3.amazonaws.com%2Fbb40d70c-1d06-4a05-8516-78a1cd5352cc%2Fimages%2F7702b815-04eb-4eca-a593-9ca203fe8bd1.png&w=1920&q=80:0:0 Failed to load resource: the server responded with a status of 404 (Not Found)
+http://127.0.0.1:5066/_next/image?url=https%3A%2F%2Fsuper-static-assets.s3.amazonaws.com%2Fbb40d70c-1d06-4a05-8516-78a1cd5352cc%2Fimages%2F4c00dfcf-11a5-4211-9856-4a22e18dccd7.png&w=1920&q=80:0:0 Failed to load resource: the server responded with a status of 404 (Not Found)
+http://127.0.0.1:5066/_next/static/chunks/8549-16380a78de78b507.js:0:0 Failed to load resource: the server responded with a status of 404 (Not Found)
+http://127.0.0.1:5066/_next/image?url=https%3A%2F%2Fsuper-static-assets.s3.amazonaws.com%2Fbb40d70c-1d06-4a05-8516-78a1cd5352cc%2Fimages%2F1de1837b-0224-41f9-becb-26697a4ee9c0.png&w=1920&q=80:0:0 Failed to load resource: the server responded with a status of 404 (Not Found)
+http://127.0.0.1:5066/_next/image?url=https%3A%2F%2Fsuper-static-assets.s3.amazonaws.com%2Fbb40d70c-1d06-4a05-8516-78a1cd5352cc%2Fimages%2F56b873f7-e382-4e44-a3d8-d177a79c1ebd.png&w=1920&q=80:0:0 Failed to load resource: the server responded with a status of 404 (Not Found)
+http://127.0.0.1:5066/_next/static/chunks/7628-86e9abdae0ae4ec3.js:0:0 Failed to load resource: the server responded with a status of 404 (Not Found)
+http://127.0.0.1:5066/_next/static/chunks/9503-5d44125eec1a826d.js:0:0 Failed to load resource: the server responded with a status of 404 (Not Found)
+http://127.0.0.1:5066/_next/static/chunks/pages/index-3f1c6e2fdc877423.js:0:0 Failed to load resource: the server responded with a status of 404 (Not Found)
+http://127.0.0.1:5066/_next/static/chunks/pages/%5B...page%5D-6dd439801a97cf24.js:0:0 Failed to load resource: the server responded with a status of 404 (Not Found)
+

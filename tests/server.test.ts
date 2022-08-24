@@ -1,59 +1,99 @@
 import { Server } from 'http'
 import path from 'path'
 import fs from 'fs'
-import JSON5 from 'json5'
 import { Browser, chromium, Page } from 'playwright'
 import { test, expect, afterAll, beforeAll } from 'vitest'
 import { spawn } from 'child_process'
 import { fetch } from 'undici'
 
-import { shell } from '@xmorse/deployment-utils/src'
-import { getRoutes } from './utils'
+import { getRoutes, LOCALLY } from '../utils'
+let timeout = 1000 * 60 * 10
 
-const base = process.env.LOCALLY
+const base = LOCALLY
     ? `http://127.0.0.1:5066`
     : 'https://suite.preview.slashkit.app' // maybe use the production server later?
 
 const routes = getRoutes()
 
-test(
-    'test',
-    async () => {
+beforeAll(() => {
+    try {
+        fs.rmdirSync(path.resolve(__dirname, `../screens/`), {
+            recursive: true,
+        })
+        fs.rmdirSync(path.resolve(__dirname, `../logs/`), { recursive: true })
+    } catch (e) {}
+})
+beforeAll(async () => {
+    let n = 0
+    while (n < 5) {
         try {
-            await testUrl({ path: '/', base })
-            for (let r of routes) {
-                let basePath = r.path
-                if (!basePath) {
-                    throw new Error(`Missing basePath for ${r}`)
-                }
-                await testUrl({ path: basePath, base })
+            await sleep(1000)
+            console.log(`Waiting for server to start, attempt ${n}`)
+            const resp = await fetch(`${base}/__check_health`)
+            if (resp.ok) {
+                console.log(`Server is up`)
+                return
             }
-            await testUrl({
-                path: '/notaku?changing-path',
-                base,
-                async fn(page) {
-                    await Promise.all([
-                        page.click(`text="Supported blocks"`),
-                        page.waitForNavigation(),
-                    ])
-                },
-            })
-            await testUrl({
-                path: '/super',
-                base,
-                async fn(page) {
-                    await Promise.all([
-                        page.click(`a#block-how-super-works`),
-                        page.waitForNavigation(),
-                    ])
-                },
-            })
-            // await testUrl({ path: '/with-redirection', base })
-            // await sleep(1000 * 100)
-        } finally {
-        }
+        } catch (e) {}
+        n++
+    }
+    throw new Error(`Server is not up, tried ${n} times`)
+})
+
+test(
+    'test root path',
+    async () => {
+        await testUrl({ path: '/', base })
     },
-    1000 * 60 * 10,
+    timeout,
+)
+
+for (let r of routes) {
+    let basePath = r.path
+    if (!basePath) {
+        throw new Error(`Missing basePath for ${r}`)
+    }
+    test(
+        `${basePath}`,
+        async () => {
+            await testUrl({ path: basePath, base })
+        },
+        timeout,
+    )
+}
+
+test(
+    'notaku client side navigation',
+    async () => {
+        await testUrl({
+            path: '/slashkit-test-notaku?changing-path',
+            base,
+            async fn(page) {
+                await Promise.all([
+                    page.click(`text="Supported blocks"`),
+                    page.waitForNavigation(),
+                ])
+            },
+        })
+    },
+    timeout,
+)
+
+test(
+    'super client side navigation',
+    async () => {
+        await testUrl({
+            path: '/slashkit-test-super.so?changing-path',
+            base,
+            async fn(page) {
+                await Promise.all([
+                    page.click(`a#block-how-super-works`),
+                    page.waitForNavigation(),
+                ])
+            },
+        })
+    },
+    timeout,
 )
 
 // TODO run page twice to test scripts cache?
