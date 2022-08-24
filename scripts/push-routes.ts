@@ -1,6 +1,8 @@
 import { fetch } from 'undici'
 import { getRoutes } from '../utils'
 
+const isDev = true // how to decide when doing dev and prod?
+
 async function main() {
     const secret = process.env.SECRET || ''
     if (!secret) {
@@ -8,7 +10,7 @@ async function main() {
     }
     console.log('Pushing routes to server')
     const resp = await fetch(
-        'https://preview.notaku.so/api/push-suite-routes',
+        `https://${isDev ? 'preview.' : ''}slashkit.io/api/push-suite-routes`,
         {
             body: JSON.stringify({
                 routes: getRoutes(),

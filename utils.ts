@@ -4,7 +4,9 @@ export function getRoutes(): Route[] {
     let routes: Route[] = JSON5.parse(fs.readFileSync('./routes.jsonc', 'utf8'))
     routes = routes.map((r) => {
         if (!r.path.startsWith('/slashkit-test-')) {
-            r.path = `/slashkit-test-${r.path}`
+            throw new Error(
+                `Invalid route ${r.path}, must start with /slashkit-test-`,
+            )
         }
         return r
     })
