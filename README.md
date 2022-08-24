@@ -5,7 +5,7 @@ Hosting on a subdirectory has the main benefit of improved SEO and domain author
 
 ## Contributing
 
-You can add a new website to test in the `routes.jsonc` file and open a pull request.
+You can add a new website to test in the `routes.ts` file and open a pull request.
 
 After the merge the website will be available on `https://suite.preview.slashkit.app/{path}`.
 
