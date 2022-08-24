@@ -4,7 +4,7 @@ import { getRoutes } from '../utils'
 const isDev = true // how to decide when doing dev and prod?
 
 async function main() {
-    const secret = process.env.SECRET || ''
+    const secret = process.env.TEST_SUITE_SECRET || ''
     if (!secret) {
         throw new Error('SECRET is required')
     }
@@ -22,6 +22,9 @@ async function main() {
             },
         },
     )
+    if (!resp.ok) {
+        throw new Error(`${resp.status} ${resp.statusText}`)
+    }
     const json = await resp.json()
     console.log(json)
 }

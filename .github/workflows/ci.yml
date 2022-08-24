@@ -9,7 +9,7 @@ jobs:
     timeout-minutes: 30
     runs-on: ubuntu-latest
     env:
-      SECRET: ${{ secrets.SECRET }}
+      TEST_SUITE_SECRET: ${{ secrets.TEST_SUITE_SECRET }}
     steps:
       - uses: actions/checkout@master
         with:
