@@ -1,6 +1,7 @@
 name: CI
 
 on:
+  workflow_dispatch:
   push:
     branches: [main] # TODO make sure i don't expose secret to pull requests
 
