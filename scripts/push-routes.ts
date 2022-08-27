@@ -8,10 +8,10 @@ let base = (() => {
         return `http://localhost:7050`
     }
     if (isPreview) {
-        return `https://suite.preview.slashkit.app`
+        return `https://preview.slashkit.io`
     }
     if (process.env.NODE_ENV === 'production') {
-        return `https://suite.slashkit.app`
+        return `https://preview.slashkit.io`
     }
 
     throw new Error('Unknown NODE_ENV')
