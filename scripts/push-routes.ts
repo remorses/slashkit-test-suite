@@ -36,7 +36,12 @@ async function main() {
         },
     })
     if (!resp.ok) {
-        throw new Error(`${resp.status} ${resp.statusText}`)
+        let text = ''
+        try {
+            text = await resp.text()
+        } catch (e) {}
+
+        throw new Error(`${resp.status}: ${text}`)
     }
     const json = await resp.json()
     console.log(json)
