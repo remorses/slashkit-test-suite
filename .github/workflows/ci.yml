@@ -36,6 +36,6 @@ jobs:
           run_install: false
       # scripts
       - run: pnpm i --store-dir ~/pnpm
-      # TODO push routes changes with secrets from CI
       - run: pnpm run push-routes
-      - run: pnpm run test
+      - run: pnpm playwright install chrome --with-deps
+      - run: xvfb-run --auto-servernum -- pnpm test
