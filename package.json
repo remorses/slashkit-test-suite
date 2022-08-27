@@ -4,7 +4,8 @@
     "description": "",
     "scripts": {
         "test": "vitest --run",
-        "push-routes": "doppler run -- pnpm esno scripts/push-routes.ts",
+        "push-routes": "pnpm esno scripts/push-routes.ts",
+        "push-routes:locally": "LOCALLY=true doppler run -- pnpm esno scripts/push-routes.ts",
         "start-local-server": "pnpm -r --filter router play-fullstack",
         "test:locally": "LOCALLY=true doppler run -- pnpm push-routes && concurrently -k 'pnpm start-local-server' 'rm -rf diskv && pnpm -r --filter router build && LOCALLY=true doppler run -- vitest --run'"
     },
