@@ -36,6 +36,6 @@ jobs:
           run_install: false
       # scripts
       - run: pnpm i --store-dir ~/pnpm
-      - run: pnpm playwright install chrome --with-deps
+      - run: pnpm playwright install
       - run: pnpm run push-routes
       - run: xvfb-run --auto-servernum -- pnpm test
