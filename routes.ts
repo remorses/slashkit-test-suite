@@ -16,7 +16,7 @@ export const routes: Route[] = [
     },
     // { path: '/wordpress', targetUrl: '' },
     // TODO trailing slash is removed by next.js for framer, use a framer site that does not rely on it
-    { path: '/slashkit-test-framer', targetUrl: 'https://framer.design' },
+    { path: '/slashkit-test-framer', targetUrl: 'https://blog.framer.wiki' },
     {
         path: '/slashkit-test-substack',
         targetUrl: 'https://luke.substack.com',
