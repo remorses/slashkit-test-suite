@@ -1,7 +1,9 @@
 import { fetch } from 'undici'
 import { getRoutes } from '../utils'
-
-const isPreview = true // how to decide when doing dev and prod?
+if (!process.env.NODE_ENV) {
+    throw new Error('NODE_ENV is required')
+}
+const isPreview = (process.env.NODE_ENV as string) === 'preview'
 
 let base = (() => {
     if (process.env.LOCALLY) {
@@ -11,7 +13,7 @@ let base = (() => {
         return `https://preview.slashkit.io`
     }
     if (process.env.NODE_ENV === 'production') {
-        return `https://preview.slashkit.io`
+        return `https://slashkit.io`
     }
 
     throw new Error('Unknown NODE_ENV')
