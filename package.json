@@ -6,6 +6,7 @@
         "test": "vitest --run",
         "push-routes": "NODE_ENV=preview pnpm esno scripts/push-routes.ts",
         "push-routes:prod": "NODE_ENV=production doppler run -c production -- pnpm esno scripts/push-routes.ts",
+        "push-routes:preview": "NODE_ENV=preview doppler run -c preview -- pnpm esno scripts/push-routes.ts",
         "push-routes:locally": "NODE_ENV=development LOCALLY=true doppler run -- pnpm esno scripts/push-routes.ts",
         "start-local-server": "pnpm -r --filter router play-fullstack",
         "test:locally": "pnpm push-routes:locally && concurrently -k 'pnpm start-local-server' 'rm -rf diskv && pnpm -r --filter router build && LOCALLY=true doppler run -- vitest --run'"
