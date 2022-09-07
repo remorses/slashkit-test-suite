@@ -1,10 +1,11 @@
 import { Route } from './utils'
 
 export const routes: Route[] = [
-    {
-        path: '/slashkit-test-gitbook',
-        targetUrl: 'https://docs.gitbook.com',
-    },
+    // gitbook no longer works, problems with window.location.pathname that is obfuscated
+    // {
+    //     path: '/slashkit-test-gitbook',
+    //     targetUrl: 'https://docs.gitbook.com',
+    // },
     {
         path: '/slashkit-test-webflow',
         targetUrl: 'https://wafunda.webflow.io',
