@@ -10,6 +10,10 @@ export const routes: Route[] = [
         path: '/slashkit-test-webflow',
         targetUrl: 'https://wafunda.webflow.io',
     },
+    // {
+    //     path: '/slashkit-test-ghost',
+    //     targetUrl: 'https://www.knulst.de',
+    // },
     // { path: '/square', targetUrl: '' },
     {
         path: '/slashkit-test-notaku',
