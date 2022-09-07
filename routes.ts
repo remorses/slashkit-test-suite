@@ -10,10 +10,11 @@ export const routes: Route[] = [
         path: '/slashkit-test-webflow',
         targetUrl: 'https://wafunda.webflow.io',
     },
-    {
-        path: '/slashkit-test-ghost',
-        targetUrl: 'https://www.knulst.de',
-    },
+    // TODO ghost has a trailing slash redirect to /, nextjs has the opposite
+    // {
+    //     path: '/slashkit-test-ghost',
+    //     targetUrl: 'https://www.knulst.de',
+    // },
     // { path: '/square', targetUrl: '' },
     {
         path: '/slashkit-test-notaku',
