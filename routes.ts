@@ -42,3 +42,4 @@ export const routes: Route[] = [
         targetUrl: 'https://shopify.dev/custom-storefronts/hydrogen',
     },
 ]
+
